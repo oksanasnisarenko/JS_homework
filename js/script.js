@@ -65,3 +65,29 @@ writeYourGenres();
 
 
 
+
+function calculateVolumeAndArea(length) {
+	if (typeof(length) !== 'number' || length < 0 || !Number.isInteger(length)) {
+		return 'При вычислении произошла ошибка';
+	}
+	let volume = 0,
+		area = 0;
+	
+	volume = length * length * length;
+	area = 6 * (length * length);
+	return `Обьем куба: ${volume}, площа всей поверхности: ${area}`;
+}
+
+calculateVolumeAndArea(3);
+
+function getCoupeNumber(place) {
+	if (typeof(place) !== 'number' || place < 0 || !Number.isInteger(place)) {
+		return console.log('Ошибка. Проверьте правильность введенного номера места');
+	} else if (place === 0 || place > 36) {
+		return console.log('Таких мест в вагоне не существует');
+	} else {
+		return console.log(Math.ceil(place / 4));
+	}
+
+}
+getCoupeNumber(33);
